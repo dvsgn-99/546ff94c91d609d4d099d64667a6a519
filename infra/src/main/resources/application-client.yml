@@ -1,0 +1,23 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:root@mongo:27017/place?authSource=admin
+
+api-endpoint:
+  kakao:
+    host: https://dapi.kakao.com
+    auth: KakaoAK 9cf0115238c48f7c8213f6db68fb6f16
+  naver:
+    host: https://openapi.naver.com
+    auth:
+      client-id: 6y71q0w3WO5hO6A50t4K
+      client-secret: tfRfKadCRL
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
+

@@ -1,0 +1,28 @@
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - "27017:27717"
+    networks:
+      - my-network
+  api-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mongo
+    ports:
+      - "8080:8080"
+    networks:
+      - my-network
+
+
+volumes:
+  mongo-data:
+
+networks:
+  my-network:
